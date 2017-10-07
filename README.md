@@ -1,0 +1,2 @@
+# autoConnect
+自用的一个简单的校园网网页自动登录chrome插件
