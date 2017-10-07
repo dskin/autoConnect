@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>自动登录</title>
+	<link rel="stylesheet" type="text/css" href="/css/setInfo.css">
+</head>
+<body>
+	<!-- logo部分开始 -->
+	<div class="logo">
+		<div class="logo-bg"></div>
+		<img src="/images/logo.jpg" class="logo-pic">
+		<span id="localUser" class="logo-userInfo"></span>
+	</div>
+	<!-- logo部分结束 -->
+
+	<!-- 绑定账号部分开始 -->
+	<div class="preparePage" id="preparePage" style="display: block">
+		<p class="info">请绑定你的账号密码</p>
+		<div class="section">
+			<input id="user" type="number" class="user" placeholder="账号" autofocus/>
+	    	<input id="psw"  type="password" class="psw" placeholder="密码"/>
+
+			<div class="isp">
+				<span>运营商:</span>
+				<select id="isp" class="select">
+					<option value="">校园网</option>
+					<option value="@cmcc">中国移动</option>
+					<option value="@unicom">中国联通</option>
+					<option value="@telecom">中国电信</option>
+				</select>
+			</div>
+	    </div>
+		<div class="submitSection">
+			<button id="submit" class="btn">绑定</button>
+		</div>
+	</div>
+	<!-- 绑定账号部分结束 -->
+
+	<!-- 显示信息部分开始 -->
+	<div id="bindPage" style="display: none">
+		<p class="info">你已绑定成功,点击GO连接!<p>
+		<button id="rouseBgPage" class="btn">GO!</button>
+		<button id="cancelBind" class="btn">解除绑定</button>
+		<div class="tips">
+			<p>tips:</p>
+			<p>1、若点击GO之后还无法上网，请点击解除绑定，核对账号信息后再进行操作。</p>
+			<p>2、每次需要登录时，只需要打开扩展点击GO即可，不用再次输入账号密码。</p>
+			<p>3、账号密码数据均存于本地，保证数据安全。</p>
+			<p>4、部分api需要浏览器支持，若无法使用，请更新chrome。</p>
+		</div>
+	</div>
+	<!-- 显示信息部分结束 -->
+	<script src="/js/logIn.js"></script>
+</body>
+</html>

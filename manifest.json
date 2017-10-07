@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "huas校园网自动登录",
+  "description": "方便的使用本校（huas）校园网络，免去了每次登录输入账号密码的繁琐",
+  "version": "1.0",
+  "icons": { 
+    "16": "/images/icon16.png",
+    "48": "/images/icon48.png",
+    "128": "/images/icon128.png" 
+  },
+
+  "browser_action": {
+    "default_icon": "/images/icon.png",
+    "default_popup": "setInfo.html"
+  },
+
+  "background": {
+    "scripts": ["/js/eventPage.js"],
+    "persistent": false
+  },
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "notifications" 
+  ]
+}

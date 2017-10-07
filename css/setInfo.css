@@ -1,0 +1,130 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	height: 300px;
+	width: 200px;
+}
+
+/*logo部分*/
+.logo{
+	height: 100px;
+	position: relative;
+	border-bottom: 1px solid #ccc;
+}
+
+.logo-bg{
+	height: 100px;
+	background-image: url(/images/logo.jpg);
+	filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+    
+    -webkit-filter: blur(10px); /* Chrome, Opera */
+       -moz-filter: blur(10px);
+        -ms-filter: blur(10px);    
+            filter: blur(10px);
+    
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
+}
+
+.logo-pic{
+	position: absolute;
+	top: 25%;
+	left: 10px;
+	width: 50px;
+	height: 50px;
+	border: 0.1px solid #ccc;
+	border-radius: 50%;
+}
+
+.logo-userInfo{
+	position: absolute;
+	top: 35%;
+	left: 70px;
+	font-size: 14px;
+}
+
+
+
+
+/*绑定账号部分*/
+.preparePage{
+	width: 100%;
+	height: 200px;
+}
+
+.section{
+	width: 200px;
+}
+
+.user,.psw{
+	display: block;
+	padding-top: 10px;
+	height: 20px;
+	width: 180px;
+	margin: 0 auto;
+	outline: none;
+	border:none;
+	border-bottom: 1px solid #ccc;
+}
+
+.isp{
+	padding-top: 10px;
+	font-size: 14px;
+	color: #999;
+	width: 180px;
+	margin: 0 auto;
+}
+
+.submitSection{
+	padding-top: 10px;
+	width: 200px;
+}
+
+.select{
+	color: #999;
+	outline: none;
+}
+
+
+
+
+/*显示信息部分*/
+.tips{
+	padding-top: 10px;
+	color: #999;
+	width: 180px;
+	margin: 0 auto;
+	font-size: 8px;
+}
+
+
+
+
+/*公用部分*/
+.info{
+	width: 180px;
+	margin: 0 auto;
+	color:#999;
+	font-family: 微软雅黑;
+	padding-top: 10px;
+}
+
+.btn{
+	display: block;
+	margin: 0 auto;
+	height: 30px;
+	width: 180px;
+	color: #fff;
+	background-color: #2A6FD7;
+	border:1px solid #ccc;
+	border-radius: 10px;
+	font-size: 16px;
+	letter-spacing: 5px;
+	margin-top: 10px;
+}
+
+.btn:hover{
+	cursor: pointer;
+}
