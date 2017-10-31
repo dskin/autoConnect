@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "huas校园网自动登录",
   "description": "方便的使用本校（huas）校园网络，免去了每次登录输入账号密码的繁琐",
-  "version": "1.0",
+  "version": "1.1",
   "icons": { 
     "16": "/images/icon16.png",
     "48": "/images/icon48.png",
@@ -18,6 +18,14 @@
     "scripts": ["/js/eventPage.js"],
     "persistent": false
   },
+
+  "content_scripts": [
+    {
+      "matches": ["http://172.30.4.129/a70.htm"],
+      "js": ["/js/content.js"],
+      "run_at": "document_end"
+    }
+  ],
 
   "permissions": [
     "activeTab",
