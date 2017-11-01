@@ -8,7 +8,7 @@ chrome.runtime.onMessage.addListener(function(msg){
 // 后台登录
 function logIn(){
 	// 登录网址
-	var url = 'http://172.30.4.129/a70.htm';
+	var url = 'http://172.30.4.129/a70.htm*';
 	var options = {
 		method: 'POST',
 		hearders: {
@@ -30,11 +30,6 @@ function logIn(){
 	if(localStorage.user){
 		fetch(url,options).then(function(response){
 			console.log(response.status);
-			console.log(response.statusText);
-			console.log(response.headers);
-			console.log(response.url);
-			console.log(response.text());
-			console.log("over");
 		})
 	}else{
 		// 以下为浏览器notification请求实例，实际上，chrome扩展已经在安装时获取了相应权限，可直接进行通知

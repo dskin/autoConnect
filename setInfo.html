@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" charset="utf-8">
 	<title>自动登录</title>
 	<link rel="stylesheet" type="text/css" href="/css/setInfo.css">
 </head>
@@ -38,17 +38,23 @@
 	<!-- 绑定账号部分结束 -->
 
 	<!-- 显示信息部分开始 -->
-	<div id="bindPage" style="display: none">
-		<p class="info">你已绑定成功,点击GO连接!<p>
-		<button id="rouseBgPage" class="btn">GO!</button>
-		<button id="cancelBind" class="btn">解除绑定</button>
-		<div class="tips">
-			<p>tips:</p>
-			<p>1、若点击GO之后还无法上网，请点击解除绑定，核对账号信息后再进行操作。</p>
-			<p>2、每次需要登录时，只需要打开扩展点击GO即可，不用再次输入账号密码。</p>
-			<p>3、账号密码数据均存于本地，保证数据安全。</p>
-			<p>4、部分api需要浏览器支持，若无法使用，请更新chrome。</p>
+	<div id="bindPage">
+		<div id="notConnect" style="display: none">
+			<p class="info">你还未连接到网络哦,点击GO连接!<p>
+			<button id="rouseBgPage" class="btn">GO!</button>
+			<div class="tips">
+				 
+				<p>tips:</p>
+				<p>1、每次需要手动登录时，我们会帮你自动登录，你无需任何操作。</p>
+				<p>2、若自动登录无法使用，请手动点击扩展上的GO按钮，进行网络连接。</p>
+				<p>3、账号密码数据均存于本地，保证数据安全。</p>
+				<p>4、部分api需要浏览器支持，若无法使用，请更新chrome浏览器。</p>
+			</div>
 		</div>
+		<div id="hasConnect" style="display: none">
+			<p class="info">你已成功连接网络！</p>
+		</div>
+		<button id="cancelBind" class="btn">解除绑定</button>
 	</div>
 	<!-- 显示信息部分结束 -->
 	<script src="/js/logIn.js"></script>
