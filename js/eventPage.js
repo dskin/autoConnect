@@ -44,6 +44,7 @@ function logIn(){
 		// 检查用户是否同意接受通知
 		else if (Notification.permission === "granted"){
 			var notification = new Notification("未绑定，请绑定账号后刷新重试",noptions);
+			setTimeout(notification.close.bind(notification), 3000);
 		}
 
 		// 否则我们需要向用户获取权限
@@ -51,7 +52,8 @@ function logIn(){
 		    Notification.requestPermission(function(permission){
 			    // 如果用户同意，就可以向他们发送通知
 			    if (permission === "granted") {
-			        var notification = new Notification("未绑定，请绑定账号后刷新重试",noptions);
+					var notification = new Notification("未绑定，请绑定账号后刷新重试",noptions);
+					setTimeout(notification.close.bind(notification), 3000);
 			    }
 		    });
 		}

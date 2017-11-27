@@ -8,6 +8,7 @@ rouseBgPage.addEventListener("click", function () {
 	};
 	var notification = new Notification("已发送连接请求，现在打开网页吧！", noptions);
 	setTimeout(notification.close.bind(notification), 3000);
+	hasOnline();
 }, false)
 
 // 绑定按钮事件监听
@@ -38,12 +39,23 @@ cancelBind.addEventListener("click",function(){
 },false)
 
 // 显示当前绑定用户信息
-function showUser() {
+function showUser(){
 	if (localStorage.user) {
 		localUser.innerText = localStorage.user;
-	} else {
+	}else{
 		localUser.innerText = "";
 	}
+}
+
+// 判断是否联网
+function hasOnline(){
+	// 发送一个fetch请求，判断是否联网，以显示不同信息
+	fetch('https://www.baidu.com', { mode: 'no-cors' }).then(function (response) {
+		hasConnect.style.display = "block";
+	})
+	.catch(function (error) {
+		notConnect.style.display = "block";
+	});
 }
 
 // 主函数
@@ -57,18 +69,9 @@ function setAccountInfo(){
 	var notConnect = document.getElementById("notConnect");
 	var hasConnect = document.getElementById("hasConnect");
 
-	if(!localStorage.user){
-		submitListener();
-		showUser();
-	} else {
+	if(localStorage.user){
 		preparePage.style.display = "none";
-		// 发送一个fetch请求，判断是否联网，以显示不同信息
-		fetch('https://www.baidu.com',{mode: 'no-cors'}).then(function (response) {
-			hasConnect.style.display = "block";
-		})
-		.catch(function (error) {
-			notConnect.style.display = "block";
-		});
+		hasOnline();
 		showUser();
 	}
 }
